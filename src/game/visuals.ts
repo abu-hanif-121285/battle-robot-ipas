@@ -1,0 +1,19 @@
+// Shared art direction for the hangar, combat portraits and articulated models.
+export interface UnitVisual {
+  serial: string; title: string; specialty: string; intro: string;
+  primary: number; ceramic: number; trim: number; light: number; accent: string;
+  chassis: 'heavy' | 'agile' | 'balanced'; gear: 'bulwark' | 'twins' | 'rail' | 'medic' | 'orb' | 'gauntlets' | 'crystal' | 'ninja' | 'aegis' | 'tesla';
+}
+export const VISUALS: Record<string, UnitVisual> = {
+  titan: { serial: '001', title: 'The Iron Bastion', specialty: 'Frontline', intro: 'Benteng baja di garis depan. Armor berlapis dan perisai energi raksasanya melindungi tim dari gempuran lawan.', primary: 0x2056aa, ceramic: 0xe1e8ed, trim: 0xeabe61, light: 0x47ddff, accent: '#61c9ff', chassis: 'heavy', gear: 'bulwark' },
+  blaze: { serial: '002', title: 'The Crimson Blade', specialty: 'Burst', intro: 'Dua bilah plasma, satu serangan mematikan. Blaze menerobos pertahanan musuh dengan kecepatan dan presisi tinggi.', primary: 0xb52032, ceramic: 0xe34438, trim: 0xbfc3cb, light: 0xff3847, accent: '#ff787c', chassis: 'agile', gear: 'twins' },
+  volt: { serial: '003', title: 'The Golden Sharpshooter', specialty: 'Precision', intro: 'Penembak jitu berarmor emas. Rail-cannon presisi tinggi dan rentetan laser menjaga ancaman tetap jauh dari tim.', primary: 0xf2ad18, ceramic: 0x303e4c, trim: 0xfcda7c, light: 0x5bd9ff, accent: '#ffce6b', chassis: 'balanced', gear: 'rail' },
+  nexa: { serial: '004', title: 'The Lifeline', specialty: 'Healing', intro: 'Denyut energi penyembuh di tengah pertempuran. Nexa memulihkan rekan dan menyelimuti tim dengan kubah pelindung.', primary: 0xe4eff2, ceramic: 0xf1fcfc, trim: 0x30bbc4, light: 0x4dffeb, accent: '#58e2d7', chassis: 'agile', gear: 'medic' },
+  photon: { serial: '005', title: 'The Cosmic Conductor', specialty: 'Area Damage', intro: 'Pengendali energi kosmik berarmor ungu. Photon membentuk medan gravitasi dan melepaskan ledakan plasma di arena.', primary: 0x8047bf, ceramic: 0xc1a4de, trim: 0x9f8abb, light: 0xc75cff, accent: '#c492ff', chassis: 'balanced', gear: 'orb' },
+  goliath: { serial: '006', title: 'The Heavy Hitter', specialty: 'Brawler', intro: 'Rangka oranye yang dibangun untuk benturan. Sepasang tinju mekanis raksasa mengubah setiap pukulan menjadi gelombang kejut.', primary: 0xe47819, ceramic: 0xec9c3e, trim: 0xb4c2cd, light: 0x41ecd5, accent: '#ffa260', chassis: 'heavy', gear: 'gauntlets' },
+  frost: { serial: '007', title: 'The Glacial Warden', specialty: 'Crowd Control', intro: 'Kristal kriogenik menyelimuti armor Frost. Kuasai jalur dengan perangkap es dan gelombang beku yang memperlambat musuh.', primary: 0x3b93d6, ceramic: 0xe2f5ff, trim: 0x9dddff, light: 0x7feeff, accent: '#8be5ff', chassis: 'balanced', gear: 'crystal' },
+  shadow: { serial: '008', title: 'The Phantom Edge', specialty: 'Stealth', intro: 'Mecha ninja dengan jubah hitam dan katana violet. Hilang dari pandangan, dekati target, lalu serang dari bayangan.', primary: 0x252536, ceramic: 0x463557, trim: 0x8650af, light: 0xba4bff, accent: '#b282eb', chassis: 'agile', gear: 'ninja' },
+  aegis: { serial: '009', title: 'The Golden Guardian', specialty: 'Protection', intro: 'Penjaga berlapis baja putih-emas. Perisai heraldiknya membentengi sekutu dan memantulkan serangan balik ke arah lawan.', primary: 0xe9e8dc, ceramic: 0xc79838, trim: 0xf8dc83, light: 0x51d9f5, accent: '#eec778', chassis: 'heavy', gear: 'aegis' },
+  thunder: { serial: '010', title: 'The Storm Breaker', specialty: 'Chain Damage', intro: 'Petarung biru-emas bermuatan listrik. Kumparan pada lengannya mengalirkan rantai petir dari satu musuh ke musuh berikutnya.', primary: 0x244db8, ceramic: 0xe8ad22, trim: 0xffcf61, light: 0xffea6a, accent: '#ffdc62', chassis: 'balanced', gear: 'tesla' },
+};
+export const portrait = (id: string) => `/images/heroes/${VISUALS[id] ? id : 'titan'}.webp`;
